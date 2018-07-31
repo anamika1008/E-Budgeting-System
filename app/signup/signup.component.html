@@ -1,0 +1,55 @@
+
+<div class="mybg2">
+    <a routerLink="/"><strong style="color:white;font-size: 20px">&nbsp;&nbsp;Home</strong></a>
+    <form #empForm="ngForm"(ngSubmit)="onAddUser(empForm)">
+  <div class="container" >
+    <h1 style="color:white">Sign Up</h1>
+    <p style="color:white">Please fill in this form to create an account.</p>
+    <hr>
+
+
+    <div class="form-group">
+        <label for="name"><b style="color:white">Username</b></label>
+        <input type="text" placeholder="Enter Username"  #unameref="ngModel" minlength="4" required class="form-control" name="name" ngModel>
+        <div *ngIf  ="unameref.errors && (unameref.dirty||unameref.touched)" class ="alert alert-danger">
+            <div [hidden]="!unameref.errors.required">
+            Please enter a password</div>
+            <div [hidden]="!unameref.errors.pattern">
+                Please enter atleast 1 uppercase,lowercase, digit and character</div>
+              </div>
+          </div> 
+        
+
+    <div class="form-group">
+            <label for="email"><b style="color:white">Email</b></label>
+            <input type="text" placeholder="Enter Email" #emailref="ngModel"  required class="form-control" name="email" ngModel>
+            <div *ngIf  ="emailref.errors && (emailref.dirty||emailref.touched)" class ="alert alert-danger">
+              <div [hidden]="!emailref.errors.required">
+              Please enter a name</div>
+              </div>
+              </div> 
+
+            <div class="form-group">
+                    <label for="pass"><b style="color:white">Password</b></label>
+                    <input type="password" placeholder="Enter Password"  #pwdref="ngModel" pattern="^.*(?=.{4,10})(?=.*\d)(?=.*[a-zA-Z]).*$" required class="form-control" name="pass" ngModel>
+                    <div *ngIf  ="pwdref.errors && (pwdref.dirty||pwdref.touched)" class ="alert alert-danger">
+                        <div [hidden]="!pwdref.errors.required">
+                        Please enter a password</div>
+                        <div [hidden]="!pwdref.errors.pattern">
+                            Please enter atleast 1 uppercase,lowercase, digit and character</div>
+                          </div>
+                      </div> 
+                    
+   
+    
+    
+    <div class="clearfix">
+     
+      <button type="submit" class="signupbtn">Sign Up</button>
+      <br><br>
+      <a routerLink="/login"> <small style="color:white">Have an Account already? Log In Here</small></a>
+    </div>
+  </div>
+</form>
+<br>
+</div>

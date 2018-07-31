@@ -1,0 +1,32 @@
+<form #empForm="ngForm"(ngSubmit)="onAddUser(empForm)">
+  <div class="form-group">
+    <label for="eid1">Name</label>
+    <input type="text" id="eid1" class="form-control"
+    name="name"
+    ngModel
+    #empid="ngModel">
+
+  </div>
+    <div class="form-group">
+        <label for="eid2">Pass</label>
+        <input type="text" id="eid2" class="form-control"
+        name="pass"
+        ngModel
+        #ename="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="eid3">email</label>
+            <input type="text" id="eid3"class="form-control"
+            name="email"
+            ngModel
+            #city="ngModel">
+          </div>
+         
+              <div class=form-group>
+                <input type="submit" class="btn btn-primary"value="Login">
+              </div>
+              <div class=form-group>
+                <input type="submit" class="btn btn-primary"value="signup">
+              </div>
+  </form>
+ 
